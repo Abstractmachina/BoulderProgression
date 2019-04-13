@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">BoulderProgression</string>
+    <string name="main_startSession">Start Session</string>
+    <string name="txt_main_viewLog">View Log</string>
+    <string name="AppName">BoulderProgression</string>
+    <string name="button_log_txt">Log</string>
+    <string name="popup_grade">Grade</string>
+    <string name="popup_title">Add Problem</string>
+    <string name="label_vsum">Sum</string>
+    <string name="label_vavg">AVG</string>
+    <string name="label_vden">DEN</string>
+
+</resources>

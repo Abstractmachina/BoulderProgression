@@ -1,0 +1,732 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/session_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <TextView
+            android:id="@+id/SessionNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/session_header_margin_sides"
+            android:layout_marginTop="40dp"
+            android:text="Session 00"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+
+        <TextView
+            android:id="@+id/currentDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="190303"
+            app:layout_constraintLeft_toLeftOf="@id/SessionNo"
+            app:layout_constraintTop_toBottomOf="@id/SessionNo" />
+
+        <TextView
+            android:id="@+id/sessionLength"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintWidth_default="spread"
+            android:layout_marginRight="@dimen/session_header_margin_sides"
+            android:layout_marginLeft="@dimen/session_header_margin_sides"
+            app:layout_constraintLeft_toRightOf="parent"
+            app:layout_constraintRight_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="@id/SessionNo"
+            android:textSize="40sp"/>
+
+
+        <TextView
+            android:id="@+id/VSumLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_vsum"
+            app:layout_constraintRight_toLeftOf="@id/VSum"
+            app:layout_constraintTop_toTopOf="@id/VSum"
+            android:layout_marginRight="16dp"/>
+        <TextView
+            android:id="@+id/VAvgLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_vavg"
+            app:layout_constraintTop_toBottomOf="@id/VSum"
+            app:layout_constraintRight_toRightOf="@id/VSumLabel"
+            />
+
+        <TextView
+            android:id="@+id/VDenLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_vden"
+            app:layout_constraintTop_toBottomOf="@id/VAvg"
+            app:layout_constraintRight_toRightOf="@id/VSumLabel"/>
+
+        <TextView
+            android:id="@+id/VSum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="90"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginRight="@dimen/session_header_margin_sides"
+            android:layout_marginTop="@dimen/session_header_margin_top"/>
+        <TextView
+            android:id="@+id/VAvg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4.00"
+            app:layout_constraintTop_toBottomOf="@id/VSum"
+            app:layout_constraintRight_toRightOf="@id/VSum"
+            />
+
+        <TextView
+            android:id="@+id/VDen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0.99"
+            app:layout_constraintTop_toBottomOf="@id/VAvg"
+            app:layout_constraintRight_toRightOf="@id/VSum"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="40dp"
+        app:layout_constraintTop_toBottomOf="@id/session_header">
+
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/countTableDisplay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/V0Chain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/V0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="V0"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ProgressBar
+                    android:id="@+id/b0"
+                    style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/V0"
+                    app:layout_constraintRight_toLeftOf="@id/V0CountDisplay"
+                    app:layout_constraintWidth_default="spread"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    />
+
+                <TextView
+                    android:id="@+id/V0CountDisplay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/V1Chain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/V0Chain">
+
+                <TextView
+                    android:id="@+id/V1"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="V1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ProgressBar
+                    android:id="@+id/b1"
+                    style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/V1"
+                    app:layout_constraintRight_toLeftOf="@id/V1CountDisplay"
+                    app:layout_constraintWidth_default="spread"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    />
+
+                <TextView
+                    android:id="@+id/V1CountDisplay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="6"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/V2Chain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/V1Chain">
+
+                <TextView
+                    android:id="@+id/V2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="V2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ProgressBar
+                    android:id="@+id/b2"
+                    style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/V2"
+                    app:layout_constraintRight_toLeftOf="@id/V2CountDisplay"
+                    app:layout_constraintWidth_default="spread"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    />
+
+                <TextView
+                    android:id="@+id/V2CountDisplay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="6"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/V3Chain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/V2Chain">
+
+                <TextView
+                    android:id="@+id/V3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="V3"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ProgressBar
+                    android:id="@+id/b3"
+                    style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/V3"
+                    app:layout_constraintRight_toLeftOf="@id/V3CountDisplay"
+                    app:layout_constraintWidth_default="spread"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    />
+
+                <TextView
+                    android:id="@+id/V3CountDisplay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="6"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/V4Chain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/V3Chain">
+
+                <TextView
+                    android:id="@+id/V4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="V4"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ProgressBar
+                    android:id="@+id/b4"
+                    style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/V4"
+                    app:layout_constraintRight_toLeftOf="@id/V4CountDisplay"
+                    app:layout_constraintWidth_default="spread"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    />
+
+                <TextView
+                    android:id="@+id/V4CountDisplay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="6"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/V5Chain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/V4Chain">
+
+                <TextView
+                    android:id="@+id/V5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="V5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ProgressBar
+                    android:id="@+id/b5"
+                    style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/V5"
+                    app:layout_constraintRight_toLeftOf="@id/V5CountDisplay"
+                    app:layout_constraintWidth_default="spread"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    />
+
+                <TextView
+                    android:id="@+id/V5CountDisplay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="6"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/V6Chain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/V5Chain">
+
+                <TextView
+                    android:id="@+id/V6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="V6"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ProgressBar
+                    android:id="@+id/b6"
+                    style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/V6"
+                    app:layout_constraintRight_toLeftOf="@id/V6CountDisplay"
+                    app:layout_constraintWidth_default="spread"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    />
+
+                <TextView
+                    android:id="@+id/V6CountDisplay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/V7Chain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/V6Chain">
+
+                <TextView
+                    android:id="@+id/V7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="V7"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ProgressBar
+                    android:id="@+id/b7"
+                    style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/V7"
+                    app:layout_constraintRight_toLeftOf="@id/V7CountDisplay"
+                    app:layout_constraintWidth_default="spread"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    />
+
+                <TextView
+                    android:id="@+id/V7CountDisplay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/V8Chain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/V7Chain">
+
+                <TextView
+                    android:id="@+id/V8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="V8"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ProgressBar
+                    android:id="@+id/b8"
+                    style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/V8"
+                    app:layout_constraintRight_toLeftOf="@id/V8CountDisplay"
+                    app:layout_constraintWidth_default="spread"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    />
+
+                <TextView
+                    android:id="@+id/V8CountDisplay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/V9Chain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/V8Chain">
+
+                <TextView
+                    android:id="@+id/V9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="V9"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ProgressBar
+                    android:id="@+id/b9"
+                    style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/V9"
+                    app:layout_constraintRight_toLeftOf="@id/V9CountDisplay"
+                    app:layout_constraintWidth_default="spread"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    />
+
+                <TextView
+                    android:id="@+id/V9CountDisplay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/V10Chain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/V9Chain">
+
+                <TextView
+                    android:id="@+id/V10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="V10"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ProgressBar
+                    android:id="@+id/b10"
+                    style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/V10"
+                    app:layout_constraintRight_toLeftOf="@id/V10CountDisplay"
+                    app:layout_constraintWidth_default="spread"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="16dp"
+                    />
+
+                <TextView
+                    android:id="@+id/V10CountDisplay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/V11Chain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/V10Chain">
+
+                <TextView
+                    android:id="@+id/V11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="V11"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ProgressBar
+                    android:id="@+id/b11"
+                    style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/V11"
+                    app:layout_constraintRight_toLeftOf="@id/V11CountDisplay"
+                    app:layout_constraintWidth_default="spread"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="16dp"
+                    />
+
+                <TextView
+                    android:id="@+id/V11CountDisplay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/V12Chain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/V11Chain">
+
+                <TextView
+                    android:id="@+id/V12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="V12"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <ProgressBar
+                    android:id="@+id/b12"
+                    style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/V12"
+                    app:layout_constraintRight_toLeftOf="@id/V12CountDisplay"
+                    app:layout_constraintWidth_default="spread"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="16dp"
+                    />
+
+                <TextView
+                    android:id="@+id/V12CountDisplay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/V13Chain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/V12Chain">
+
+                <TextView
+                    android:id="@+id/V13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="V13"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ProgressBar
+                    android:id="@+id/b13"
+                    style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/V13"
+                    app:layout_constraintRight_toLeftOf="@id/V13CountDisplay"
+                    app:layout_constraintWidth_default="spread"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="16dp"
+                    />
+
+                <TextView
+                    android:id="@+id/V13CountDisplay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/V14Chain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/V13Chain">
+
+                <TextView
+                    android:id="@+id/V14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="V14"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ProgressBar
+                    android:id="@+id/b14"
+                    style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/V14"
+                    app:layout_constraintRight_toLeftOf="@id/V14CountDisplay"
+                    app:layout_constraintWidth_default="spread"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="16dp"
+                    />
+
+                <TextView
+                    android:id="@+id/V14CountDisplay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/V15Chain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/V14Chain">
+
+                <TextView
+                    android:id="@+id/V15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="V15"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ProgressBar
+                    android:id="@+id/b15"
+                    style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/V15"
+                    app:layout_constraintRight_toLeftOf="@id/V15CountDisplay"
+                    app:layout_constraintWidth_default="spread"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="16dp"
+                    />
+
+                <TextView
+                    android:id="@+id/V15CountDisplay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+
+
+    <ImageButton
+        android:id="@+id/button_addProblem"
+        style="@android:style/Widget.DeviceDefault.ImageButton"
+        android:layout_width="@dimen/session_screen_button_size"
+        android:layout_height="@dimen/session_screen_button_size"
+        android:layout_marginBottom="40dp"
+        android:layout_marginLeft="@dimen/session_header_margin_sides"
+        android:background="@android:color/transparent"
+        android:onClick="onClick_addProblem"
+        android:scaleType="fitCenter"
+        android:src="@drawable/button_add_problem"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <ImageButton
+        android:id="@+id/button_endSession"
+        android:layout_width="@dimen/session_screen_button_size"
+        android:layout_height="@dimen/session_screen_button_size"
+        android:layout_marginBottom="40dp"
+        android:layout_marginRight="@dimen/session_header_margin_sides"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/button_end_session"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:onClick="onClick_endSession"/>
+
+
+</android.support.constraint.ConstraintLayout>
