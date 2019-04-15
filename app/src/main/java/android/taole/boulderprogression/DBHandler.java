@@ -42,7 +42,7 @@ public class DBHandler
                     + ")";
 
 
-    DBHandler(Context context)
+    public DBHandler(Context context)
     {
 
         db = context.openOrCreateDatabase(DATABASE_NAME, MODE_PRIVATE, null);
@@ -50,12 +50,17 @@ public class DBHandler
 
     }
 
-
     private void initDatabase()
     {
         db.execSQL(CREATE_TABLE);
     }
 
+
+    /**
+     *
+     * @param columnName
+     * @return
+     */
     public int getMaxValue(String columnName)
     {
         Cursor c = db.rawQuery("SELECT * FROM " + DATABASE_NAME, null);

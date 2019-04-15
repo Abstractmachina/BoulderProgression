@@ -1,5 +1,6 @@
 package android.taole.boulderprogression;
 
+import android.taole.boulderprogression.enums.SessionType;
 import android.widget.TextView;
 
 import java.text.SimpleDateFormat;

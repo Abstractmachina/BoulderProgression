@@ -1,9 +1,10 @@
-package android.taole.boulderprogression;
+package android.taole.boulderprogression.UI;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.taole.boulderprogression.R;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;

@@ -5,10 +5,8 @@ import android.content.res.Resources;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-public class Utility
+ public class Utility
 {
-
-    Utility() {}
 
     /**
      * Round double to specified number of decimal points

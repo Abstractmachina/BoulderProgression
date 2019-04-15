@@ -1,4 +1,4 @@
-package android.taole.boulderprogression;
+package android.taole.boulderprogression.UI;
 
 import android.content.res.Resources;
 import android.database.sqlite.SQLiteDatabase;
@@ -7,6 +7,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.Fragment;
+import android.taole.boulderprogression.R;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,7 +28,7 @@ import com.github.mikephil.charting.utils.ColorTemplate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Fragment_Grades extends Fragment
+public class Fragment_Logbook extends Fragment
 {
 
     private  static final String TAG  = "fragment_grades";
@@ -89,7 +90,7 @@ public class Fragment_Grades extends Fragment
         // get a layout defined in xml
         ConstraintLayout chartWrapper = view.findViewById(R.id.gradesWrapper);
 
-        chart.animateY(1000);
+        chart.animateX(1500);
 
         chartWrapper.addView(chart); // add the programmatically created chart
 

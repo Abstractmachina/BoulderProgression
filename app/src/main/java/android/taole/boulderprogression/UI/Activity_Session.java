@@ -1,11 +1,16 @@
-package android.taole.boulderprogression;
+package android.taole.boulderprogression.UI;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.Handler;
+import android.taole.boulderprogression.DataBaseManager;
+import android.taole.boulderprogression.Problem;
+import android.taole.boulderprogression.R;
+import android.taole.boulderprogression.Session;
+import android.taole.boulderprogression.Utility;
+import android.taole.boulderprogression.enums.SessionType;
+import android.taole.boulderprogression.enums.Style;
 import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -24,8 +29,8 @@ public class Activity_Session extends Activity
 {
 
     //Database fields
-    private DBHandler dbh;
-    SQLiteDatabase db;
+    //private DBHandler dbh;
+    private DataBaseManager mManager;
 
     //UI variables
     private Handler handler;
@@ -50,9 +55,9 @@ public class Activity_Session extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_session);
 
-        dbh = new DBHandler(this);
+        mManager = new DataBaseManager(getApplicationContext());
 
-        int sessionNumber = dbh.getMaxValue(dbh.KEY_SESSION_NUMBER) + 1;
+        int sessionNumber = mManager.getMaxValue(mManager.KEY_SESSION_NUMBER) + 1;
         session = new Session(sessionNumber);
         session.setSessionType(SessionType.CAPACITY); //TODO add User input for session type
         handler = new Handler();
@@ -221,10 +226,9 @@ public class Activity_Session extends Activity
     {
 
 
-        if (dbh.writeToDataBase(session))
+        if (mManager.addSession(session))
         {
-            dbh.readDataBase();
-            Intent intent = new Intent(this, Activity_Main.class);
+            mManager.readAll();
             finish();
         } else {
             Toast.makeText(this, "Why would you log a session with no problems?", Toast.LENGTH_LONG).show();

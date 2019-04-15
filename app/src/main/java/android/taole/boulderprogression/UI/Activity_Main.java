@@ -1,11 +1,19 @@
-package android.taole.boulderprogression;
+package android.taole.boulderprogression.UI;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.taole.boulderprogression.DataBaseManager;
+import android.taole.boulderprogression.R;
+import android.util.Log;
 import android.view.View;
 
 public class Activity_Main extends AppCompatActivity {
+
+    DataBaseManager mManager;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -1,6 +1,6 @@
 package android.taole.boulderprogression;
 
-import android.widget.Toast;
+import android.taole.boulderprogression.enums.Style;
 
 public class Problem
 {
@@ -12,11 +12,8 @@ public class Problem
 
     final static private int INVALIDNUMCODE = -9999;
 
-    Problem()
-    {
-    }
 
-    Problem(int grade, Style style, int angle, int numberOfMoves)
+    public Problem(int grade, Style style, int angle, int numberOfMoves)
     {
         this.grade = grade;
         this.style = style;

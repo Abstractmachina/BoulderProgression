@@ -10,7 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity_Main"
+        <activity android:name=".UI.Activity_Main"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,11 +19,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Activity_Session"
+            android:name=".UI.Activity_Session"
             android:label="Session Screen"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".Activity_Log"
+            android:name=".UI.Activity_Log"
             android:theme="@style/AppTheme.NoActionBar"
             android:label="Log Screen" />
     </application>
