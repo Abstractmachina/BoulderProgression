@@ -14,7 +14,7 @@ Boulder Progression is an app for my personal climbing training use. Based on th
   *   Clear display of real-time stats (session duration, VSum/VAvg/VDen) to adjust intensity of your session on the fly.
   *   graphic visualization of your session pyramid
 * Summary and analysis of your tracked sessions with data visualization to gauge your progress in your training block. 
-* 
+
 ## Development
 Development is currently on hold, as all climbing gyms are closed due to the pandemic, so I have no way to test it in a real-world setting. Will be resumed once things normalize.
 ### To Do:
